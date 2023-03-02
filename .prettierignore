@@ -1,0 +1,11 @@
+**/build/
+**/dist/
+**/__e2e__/__reports__/
+**/ts-doc/
+**/node_modules/
+
+package-lock.json
+npm-shrinkwrap.json
+pnpm-lock.yaml
+yarn.lock
+

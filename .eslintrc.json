@@ -1,0 +1,59 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:react-hooks/recommended",
+    "plugin:testing-library/react"
+  ],
+  "plugins": ["@typescript-eslint", "import", "react-hooks", "testing-library"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "ignorePatterns": ["**/_generated/*.ts", "**/*.generated.ts", "**/dist/**"],
+  "rules": {
+    "testing-library/no-debugging-utils": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/switch-exhaustiveness-check": "warn",
+    "@typescript-eslint/no-empty-interface": ["error", {"allowSingleExtends": true}],
+    "import/export": "off",
+    "import/namespace": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 20,
+        "ignoreExternal": false
+      }
+    ],
+    "import/no-relative-packages": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object"
+        ]
+      }
+    ]
+  }
+}
